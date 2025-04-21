@@ -8,7 +8,12 @@
 import Foundation
 
 
-class LoginViewModel {
+protocol LoginViewModelProtocol {
+    func validateUsername(_ username: String) -> String?
+    func validatePassword(_ password: String) -> String?
+}
+
+class LoginViewModel: LoginViewModelProtocol {
 
     func validateUsername(_ username: String) -> String? {
         if username == username.uppercased() ||
